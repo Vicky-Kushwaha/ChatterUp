@@ -17,6 +17,8 @@ import { appLevelErrorHandlerMiddleware } from "./src/middlewares/errorHandler.j
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const port = process.env.PORT || 3000;
+
 const server = http.createServer(app);
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
@@ -129,7 +131,7 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3000, () => {
-  console.log("Listening on port 3000");
+server.listen(port, () => {
+  console.log(`Listening on port ${port}`);
   connectToDatabase();
 });
