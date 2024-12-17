@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="chat.css" />
+    <title>Register - chatterUp</title>
+  </head>
+  <body>
+    <section id="register-section">
+      <h1 id="registration-heading">Wecolme To ChatterUp</h1>
+
+      <p id="registration-text">
+        Register to join chatterUp and start chat with your friends
+      </p>
+      <form id="registerForm">
+        <h2>Register</h2>
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div>
+          <label for="avatar">Avatar:</label>
+          <input type="file" id="avatar" name="avatar" required />
+        </div>
+
+        <div>
+          <label for="password">Password:</label>
+          <input type="text" id="password" name="password" required />
+        </div>
+
+        <div class="submitbtn">
+          <input type="submit" value="Register" />
+        </div>
+
+        <div>
+          <p>Already have an account? <a href="login.html">login</a></p>
+        </div>
+      </form>
+    </section>
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="chat.js"></script>
+  </body>
+</html>

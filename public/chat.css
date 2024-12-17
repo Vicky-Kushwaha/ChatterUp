@@ -1,0 +1,434 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar {
+  background-color: grey;
+  color: white;
+  display: flex;
+  padding: 10px;
+  height: 10vh;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#nav-heading {
+  margin-left: 1rem;
+}
+
+#chatterUpUser {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  visibility: hidden;
+}
+
+#chatterUpUser #userImg {
+  border-radius: 50%;
+}
+
+#chatterUpUser #username {
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;
+  text-transform: capitalize;
+}
+
+#logout-btn {
+  margin-right: 1rem;
+  background-color: blue;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+#user-notification {
+  width: 50%;
+  background-color: rgb(236, 162, 236);
+  color: grey;
+  padding: 0.7rem;
+  margin: 0.4rem auto;
+  position: absolute;
+  top: 10px;
+  text-align: center;
+  border-radius: 4px;
+  display: none;
+}
+
+/* App Container */
+#app-container {
+  display: flex;
+  width: 100%;
+  height: 90vh;
+  background-color: #fff;
+}
+
+/* Sidebar */
+#sidebar {
+  width: 15rem;
+  background-color: #6200ea;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+#sidebar header {
+  padding: 20px;
+  min-width: 8rem;
+  background-color: #4b00b7;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+#user-list {
+  list-style: none;
+  overflow-y: auto;
+  flex: 1;
+}
+
+#user-list::-webkit-scrollbar {
+  display: none;
+}
+
+#user-list .user {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+#user-list .user:hover {
+  background-color: #4b00b7;
+}
+
+#user-list .user.active {
+  background-color: #370093;
+}
+
+.userImg {
+  border-radius: 50%;
+}
+
+.notification-badge {
+  background-color: red;
+  color: white;
+  font-size: 0.8em;
+  padding: 2px 8px;
+  border-radius: 50%;
+  display: inline-block;
+  visibility: hidden;
+}
+
+/* Chat Main Area */
+#chat-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#chat-header {
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+#typingStatus {
+  color: green;
+  font-style: italic;
+  visibility: hidden;
+}
+
+#current-chat-user {
+  text-transform: capitalize;
+  visibility: none;
+}
+
+#messages-container {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#messages-container::-webkit-scrollbar {
+  display: none;
+}
+
+.message {
+  max-width: 70%;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.message .user {
+  color: violet;
+}
+
+.sendtime {
+  font-size: 0.6rem;
+}
+
+.recievedtime {
+  font-size: 0.6rem;
+  color: violet;
+}
+
+.message.received {
+  align-self: flex-start;
+  background-color: #f0f0f0;
+}
+
+.message.sent {
+  align-self: flex-end;
+  background-color: #6200ea;
+  color: white;
+}
+
+#chat-footer {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+#chat-footer form {
+  width: 100%;
+}
+
+#message-input {
+  flex: 1;
+  width: 85%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+#send-button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  font-size: 1em;
+  color: white;
+  background-color: #6200ea;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#send-button:hover {
+  background-color: #4b00b7;
+}
+
+/* Registration and Login page css */
+#register-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ece3e3;
+  margin: 0;
+}
+
+#registration-heading {
+  color: grey;
+  margin-top: 2rem;
+  font-size: 2.2rem;
+}
+
+#registration-text {
+  color: green;
+  margin: 1rem;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+#register-section form {
+  width: 50%;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(190, 186, 186);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+#register-section form h2 {
+  text-align: center;
+}
+
+form div {
+  margin: 0.6rem;
+}
+
+form div label {
+  display: inline-block;
+  width: 5rem;
+}
+
+form div input {
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  width: 70%;
+}
+
+form .submitbtn {
+  margin: auto;
+}
+
+form .submitbtn input {
+  background-color: blue;
+  color: white;
+  width: 6rem;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form a {
+  text-decoration: none;
+}
+
+/* Responsive Design */
+
+@media (max-width: 700px) {
+  #registration-heading {
+    margin-top: 1.5rem;
+    font-size: 1.6rem;
+  }
+
+  #registration-text {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  #register-section form {
+    width: 80%;
+    padding: 0.5rem;
+  }
+
+  form div input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  #navbar {
+    padding: 5px;
+    height: 10vh;
+  }
+
+  #nav-heading {
+    margin-left: 0.2rem;
+    font-size: 1rem;
+  }
+
+  #chatterUpUser {
+    font-size: 0.8rem;
+  }
+
+  #userImg {
+    width: 30px;
+  }
+
+  #logout-btn {
+    margin-right: 0.2rem;
+  }
+
+  #app-container {
+    flex-direction: column;
+    height: 90vh;
+    width: 100vw;
+    border-radius: 0px;
+  }
+
+  #sidebar {
+    width: 100%;
+    flex-direction: row;
+    /* overflow-x: auto; */
+    align-items: center;
+  }
+
+  #sidebar header {
+    text-align: left;
+    padding: 10px;
+    font-size: 1em;
+  }
+
+  #user-list {
+    display: flex;
+    flex-wrap: nowrap;
+    list-style: none;
+    overflow-x: auto;
+    flex: 1;
+  }
+
+  #user-list .user {
+    flex: 0 0 auto;
+    padding: 10px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  #chat-main {
+    flex: 1;
+    height: 100%;
+  }
+
+  #messages-container {
+    padding: 10px;
+    max-height: 75%;
+  }
+
+  #message-input {
+    width: 78%;
+  }
+
+  #message-input,
+  #send-button {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  #chat-header {
+    padding: 5px;
+    font-size: 1em;
+  }
+
+  #message-input {
+    font-size: 0.8em;
+    padding: 8px;
+  }
+
+  #send-button {
+    padding: 8px 15px;
+    font-size: 0.8em;
+  }
+
+  .message {
+    font-size: 0.8em;
+  }
+}

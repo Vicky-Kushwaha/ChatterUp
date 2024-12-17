@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>chatterUp App</title>
+    <link rel="stylesheet" href="chat.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <h2 id="nav-heading">ChatterUp</h2>
+      <div id="chatterUpUser">
+        <img id="userImg" src="#" alt="user" width="35" />
+        <h2 id="username"></h2>
+      </div>
+      <button id="logout-btn">Logout</button>
+    </nav>
+
+    <p id="user-notification"></p>
+
+    <div id="app-container">
+      <!-- Sidebar -->
+      <aside id="sidebar">
+        <header>
+          <h3>Users</h3>
+        </header>
+        <ul id="user-list">
+          <!-- User Items -->
+          <!-- <li class="user" data-username="John">
+            <span>John</span>
+            <span class="notification-badge">3</span>
+          </li> -->
+        </ul>
+      </aside>
+
+      <!-- Main Chat Area -->
+      <main id="chat-main">
+        <header id="chat-header">
+          <h2><span id="current-chat-user">active user</span></h2>
+          <h6 id="typingStatus">typing....</h6>
+        </header>
+        <div id="messages-container">
+          <!-- Message Items -->
+          <!-- <div class="message received">
+            <span class="user">Alice:</span> Hi there!
+          </div>
+          <div class="message sent">
+            <span class="user">You:</span> Hello, Alice!
+          </div> -->
+        </div>
+        <footer id="chat-footer">
+          <!-- <form> -->
+          <input
+            type="text"
+            id="message-input"
+            value=""
+            placeholder="Type a message..."
+          />
+          <button id="send-button">Send</button>
+          <!-- </form> -->
+        </footer>
+      </main>
+    </div>
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="chat.js"></script>
+  </body>
+</html>
