@@ -35,7 +35,7 @@ if (registerForm) {
     // const password = formData.get("password");
 
     try {
-      const response = await fetch("http://localhost:3000/api/user/signup", {
+      const response = await fetch("/api/user/signup", {
         method: "POST",
         body: formData,
       });
@@ -72,7 +72,7 @@ if (loginForm) {
       password: password,
     };
     try {
-      const response = await fetch("http://localhost:3000/api/user/signin", {
+      const response = await fetch("/api/user/signin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json", // Add content type header
@@ -114,9 +114,7 @@ async function getAllUserDeatails() {
   activeChatUser = JSON.parse(activeChatUser);
 
   try {
-    const response = await fetch(
-      "http://localhost:3000/api/user/get-all-details"
-    );
+    const response = await fetch("/api/user/get-all-details");
 
     const result = await response.json();
 
@@ -358,7 +356,7 @@ socket.on("update-unread-count", ({ count, sender }) => {
 async function getUnreadMessage(user) {
   try {
     const response = await fetch(
-      `http://localhost:3000/api/message/getUnreadMessageCount/${user._id.toString()}/${activeChatterUpUser._id.toString()}`
+      `/api/message/getUnreadMessageCount/${user._id.toString()}/${activeChatterUpUser._id.toString()}`
     );
 
     const result = await response.json();
@@ -384,7 +382,7 @@ async function getUnreadMessage(user) {
 async function loadPreviousChat() {
   try {
     const response = await fetch(
-      `http://localhost:3000/api/message/getUserMessage/${activeChatterUpUser._id}/${activeChatUser._id}`
+      `/api/message/getUserMessage/${activeChatterUpUser._id}/${activeChatUser._id}`
     );
 
     const result = await response.json();
@@ -455,7 +453,7 @@ function renderRecievedMessage(username, message, time) {
 if (logoutBtn) {
   logoutBtn.addEventListener("click", async () => {
     if (activeChatterUpUser) {
-      const response = await fetch("http://localhost:3000/api/user/logout", {
+      const response = await fetch("/api/user/logout", {
         method: "POST",
       });
 
