@@ -1,5 +1,5 @@
 // connecting backend server to socket.io
-const socket = io.connect("http://localhost:3000");
+const socket = io.connect();
 
 const userLists = document.getElementById("user-list");
 const registerForm = document.getElementById("registerForm");
