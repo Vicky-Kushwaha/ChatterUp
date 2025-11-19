@@ -166,7 +166,9 @@ socket.on("users", (users) => {
 
       li.innerHTML = `<img class="userImg" src="/uploads/${user.avatar}?${
         user.avatar
-      }: profile.webp" alt="${user.name.split(" ")[0]}'s img" width="30" />
+      }: profile.webp" alt="${
+        user.name.split(" ")[0]
+      }'s img" width="30" onerror="this.onerror=null; this.src='uploads/profile.webp';" />
       <span>${user.name}</span>
       <span class="notification-badge"></span>`;
 

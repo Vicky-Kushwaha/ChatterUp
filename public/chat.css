@@ -37,6 +37,7 @@ body {
 
 #chatterUpUser #userImg {
   border-radius: 50%;
+  overflow: hidden;
 }
 
 #chatterUpUser #username {
@@ -337,7 +338,7 @@ form a {
 
 @media (max-width: 900px) {
   #navbar {
-    padding: 5px;
+    padding: 2px;
     height: 10vh;
   }
 

@@ -21,6 +21,8 @@ const port = process.env.PORT || 3000;
 
 const server = http.createServer(app);
 app.use(express.static(path.join(__dirname, "public")));
+// we can also use path.resove() to get root path
+// app.use(express.static(path.join(path.resolve(), "public")));
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -43,7 +45,7 @@ app.use("/api/message", chatRouter);
 app.use(appLevelErrorHandlerMiddleware);
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "register.html"));
+  res.sendFile(path.join(__dirname, "public", "login.html"));
 });
 
 io.on("connection", (socket) => {
