@@ -21,7 +21,7 @@ const port = process.env.PORT || 3000;
 
 const server = http.createServer(app);
 app.use(express.static(path.join(__dirname, "public")));
-// we can also use path.resove() to get root path
+// we can also use path.resolve() to get root path
 // app.use(express.static(path.join(path.resolve(), "public")));
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
